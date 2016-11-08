@@ -10,6 +10,7 @@
   "author": "Andreas Pashalides",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "express": "^4.13.4",
     "mongodb": "^2.1.14"
   }

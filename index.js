@@ -2,9 +2,11 @@ var express = require('express');
 var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
 var app = express();
+require('dotenv').config()
+
 
 //set up mongodb
-var dbUrl = 'mongodb://localhost:27017/test';
+var dbUrl = process.env.MONGODB_URI;
 
 app.use(express.static('./public'));
 var rx = /https?:\/\/(www\.)?(\w+)\.\w+\.?(\w+)?\/?.+/;
