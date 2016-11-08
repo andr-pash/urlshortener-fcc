@@ -132,4 +132,4 @@ app.get('/:str', function(req, res){
 });
 
 
-app.listen(8000);
+app.listen(process.env.PORT || 3000);
