@@ -92,11 +92,11 @@ app.get('/api/:str*', function(req, res) {
                     doc = {
                         _id: rand,
                         fullUrl: str,
-                        shortUrl: 'http://127.0.0.1:8000/' + rand
+                        shortUrl: 'https://url-fcc.herokuapp.com/s/' + rand
                     };
                     obj = {
                         fullUrl: str,
-                        shortUrl: 'http://127.0.0.1:8000/' + rand
+                        shortUrl: 'https://url-fcc.herokuapp.com/s/' + rand
                     };
                     saveToDb(doc);
                     res.send(obj);
@@ -107,7 +107,7 @@ app.get('/api/:str*', function(req, res) {
 });
 
 // Behaviour if server is hit with a shortened URL
-app.get('/:str', function(req, res){
+app.get('/s/:str', function(req, res){
     var str = req.params.str;
     mongo.connect(dbUrl, function(err, db){
       if(err) console.error(err);
